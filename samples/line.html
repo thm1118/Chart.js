@@ -44,7 +44,22 @@
 	window.onload = function(){
 		var ctx = document.getElementById("canvas").getContext("2d");
 		window.myLine = new Chart(ctx).Line(lineChartData, {
-			responsive: true
+			responsive: true,
+			scaleLineWidth: 1,
+//			scaleFontColor: '#fff',
+//			scaleFontSize: 14,
+//
+//			tooltipFillColor: 'rgba(255,255,255,0.5)',
+//			tooltipFontColor: '#333',
+//			tooltipTitleFontColor: '#fff',
+//			scaleGridLineColor:'rgba(255,255,255,0.2)',
+//			scaleLineColor:'rgba(255,255,255,.01)',
+
+			scaleShowBackgroudColor: true,
+			scaleCenterBackgroudColor: '#fed358',
+			scaleBottomBackgroudColor: '#fed358',
+			scaleLeftBackgroudColor: '#eca44f'
+
 		});
 	}
 

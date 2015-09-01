@@ -7,6 +7,18 @@
 
 	var defaultConfig = {
 
+		//Boolean - Whether backgroud color are shown
+		scaleShowBackgroudColor: false,
+
+		//String - Colour of region of left Y axis
+		scaleLeftBackgroudColor: "#eca44f",
+
+		//String - Colour of region of right Y axis and up on X axis
+		scaleCenterBackgroudColor: "#fed358",
+
+		//String - Colour of region of bottom on X axis
+		scaleBottomBackgroudColor: "#fed358",
+
 		///Boolean - Whether grid lines are shown across the chart
 		scaleShowGridLines : true,
 
@@ -276,6 +288,23 @@
 			};
 
 			if (!this.scale) return;
+
+			// backgroud color
+			if(this.options.scaleShowBackgroudColor){
+				//  region of left Y axis
+				ctx.fillStyle = this.options.scaleLeftBackgroudColor;
+				ctx.fillRect(this.scale.padding, 0, Math.round(this.scale.xScalePaddingLeft),this.scale.endPoint);
+
+				// center region of right Y axis and up on X axis
+				ctx.fillStyle = this.options.scaleCenterBackgroudColor;
+				ctx.fillRect(Math.round(this.scale.xScalePaddingLeft), 0, this.scale.width-Math.round(this.scale.xScalePaddingLeft), this.scale.endPoint);
+
+
+				// bottom region of bottom on X axis
+				ctx.fillStyle = this.options.scaleBottomBackgroudColor;
+				ctx.fillRect(this.scale.padding, this.scale.endPoint, this.scale.width, this.scale.height - this.scale.endPoint);
+			}
+
 			this.scale.draw(easingDecimal);
 
 

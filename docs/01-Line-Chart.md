@@ -57,6 +57,18 @@ These are the customisation options specific to Line charts. These options are m
 ```javascript
 {
 
+	//Boolean - Whether backgroud color are shown
+	scaleShowBackgroudColor: false,
+
+	//String - Colour of region of left Y axis
+	scaleLeftBackgroudColor: "#eca44f",
+
+	//String - Colour of region of right Y axis and up on X axis
+	scaleCenterBackgroudColor: "#fed358",
+
+	//String - Colour of region of bottom on X axis
+	scaleBottomBackgroudColor: "#fed358",
+	
 	///Boolean - Whether grid lines are shown across the chart
 	scaleShowGridLines : true,
 
